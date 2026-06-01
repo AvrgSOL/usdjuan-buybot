@@ -58,10 +58,11 @@ async function fetchRecentBuys() {
 
         const buyer = juanReceived.toUserAccount;
 
-        // Find SOL spent by buyer
-        const solSpent = nativeTransfers
-          .filter(t => t.fromUserAccount === buyer)
-          .reduce((sum, t) => sum + t.amount, 0) / 1e9;
+        // Find SOL spent via account balance change (works for pump.fun bonding curve)
+        const accountData = tx.accountData || [];
+        const buyerData = accountData.find(a => a.account === buyer);
+        const balanceChange = buyerData ? buyerData.nativeBalanceChange : 0;
+        const solSpent = balanceChange < 0 ? Math.abs(balanceChange) / 1e9 : 0;
 
         if (solSpent <= 0) continue;
 
