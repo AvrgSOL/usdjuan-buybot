@@ -7,7 +7,7 @@ const TOKEN_MINT  = process.env.TOKEN_MINT  || '9Ma4PSkHm9x4jAdMwK24DFudcEJswS8w
 const HELIUS_KEY  = process.env.HELIUS_KEY  || 'b9ba80de-9e4f-44b8-b333-572a6b7f5674';
 const POLL_MS     = 12000; // check every 12 seconds
 
-const DEXSCREENER = 'https://dexscreener.com/solana/gr9mcynq3patl5cn5ow7y1tchfgxwjg5cknpyrfkyt25';
+const DEXSCREENER = 'https://dexscreener.com/solana/5u71j2kvewqqbynbatgxv3wm91f4cpwosfbctbxbnayn';
 const PUMPFUN     = 'https://pump.fun/coin/9Ma4PSkHm9x4jAdMwK24DFudcEJswS8wSvuBdBmDpump';
 
 const bot = new TelegramBot(BOT_TOKEN, { polling: false });
