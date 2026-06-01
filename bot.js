@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const axios       = require('axios');
 
 const BOT_TOKEN   = process.env.BOT_TOKEN   || '8968795934:AAGnr5BgtJBp2MLJTcTUQEPQBjGqWu0nb2Y';
-const CHAT_ID     = process.env.CHAT_ID     || '@USDjuan';
+const CHAT_ID     = process.env.CHAT_ID     || '-1004295898320';
 const TOKEN_MINT  = process.env.TOKEN_MINT  || 'GLQbyKvvQbHf5RXPv8YbK2eqLBAXZ2ZmP3iZNduSpump';
 const HELIUS_KEY  = process.env.HELIUS_KEY  || 'b9ba80de-9e4f-44b8-b333-572a6b7f5674';
 const POLL_MS     = 12000; // check every 12 seconds
