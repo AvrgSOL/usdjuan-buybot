@@ -27,7 +27,7 @@ function getBuySize(sol) {
 
 async function fetchRecentBuys() {
   try {
-    const url = `https://api.helius.xyz/v0/addresses/${TOKEN_MINT}/transactions?api-key=${HELIUS_KEY}&limit=10&type=SWAP`;
+    const url = `https://api.helius.xyz/v0/addresses/${TOKEN_MINT}/transactions?api-key=${HELIUS_KEY}&limit=10`;
     const { data: txs } = await axios.get(url);
 
     if (!txs || txs.length === 0) return;
@@ -92,7 +92,7 @@ async function fetchRecentBuys() {
 // Initialize lastSig to current tip so we don't spam old buys on start
 async function init() {
   try {
-    const url = `https://api.helius.xyz/v0/addresses/${TOKEN_MINT}/transactions?api-key=${HELIUS_KEY}&limit=1&type=SWAP`;
+    const url = `https://api.helius.xyz/v0/addresses/${TOKEN_MINT}/transactions?api-key=${HELIUS_KEY}&limit=1`;
     const { data } = await axios.get(url);
     if (data && data.length > 0) lastSig = data[0].signature;
     console.log(`Bot started. Watching ${TOKEN_MINT}`);
